@@ -16,7 +16,7 @@ class PaginationState extends State<Pagination> {
   int curPage = 0;
   bool isLoading = true;
   final int itemsPerPage = 12;
-  final int maxElements = 30;
+  final int maxElements = 12;
 
   @override
   void initState() {
