@@ -1,4 +1,6 @@
-# mytests
+## This is my pracitise repo
+This is where I write my practise code for something I'm trying to learn
+The code isn't the cleanest but Its for practise so the code.......
 
 A new Flutter project.
 
