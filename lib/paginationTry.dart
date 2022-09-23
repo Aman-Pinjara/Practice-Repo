@@ -16,7 +16,7 @@ class PaginationState extends State<Pagination> {
   int curPage = 0;
   bool isLoading = true;
   final int itemsPerPage = 12;
-  final int maxElements = 100;
+  final int maxElements = 30;
 
   @override
   void initState() {
@@ -43,6 +43,11 @@ class PaginationState extends State<Pagination> {
     List<PageModel> newList = myList
         .map((e) => PageModel(id: e["id"], title: e["title"]!, des: e["body"]!))
         .toList();
+    if (myPageList.length + itemsPerPage > maxElements) {
+      print(maxElements - myPageList.length);
+      newList.removeRange(maxElements - myPageList.length, newList.length);
+      print(newList);
+    }
     setState(() {
       myPageList.addAll(newList);
       isLoading = false;
