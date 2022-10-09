@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mytests/hivetest.dart';
 import 'package:mytests/paginationTry.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox<Map<String, List<String>>>("selection");
   runApp(const MyApp());
 }
 
@@ -23,9 +28,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
-      home: const Pagination(),
+      home: const HiveTest(),
     );
   }
 }
