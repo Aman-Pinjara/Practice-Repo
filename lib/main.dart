@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mytests/data/graphdata.dart';
+import 'package:mytests/graphs.dart';
 import 'package:mytests/hivetest.dart';
 import 'package:mytests/paginationTry.dart';
 import 'package:hive/hive.dart';
@@ -30,7 +32,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.amber,
       ),
-      home: const HiveTest(),
+      home: const Graph(
+        modeName: "OLL",
+        modeColor: Colors.yellow,
+        graphData: graphData,
+      ),
     );
   }
 }
